@@ -18,7 +18,7 @@ header {
 nav {     
     display: flex;     
     justify-content: center;     
-    background-color: #FFF8E1; /* Warna Cream */
+    background-color: #FFE8C9; /* Warna Cream Lebih Terang */
     padding: 10px; 
 }  
 
@@ -37,12 +37,12 @@ nav .button:hover {
 }  
 
 main {     
-    background-color: #E3F2FD; /* Biru Muda */
+    background-color: #FFF3D4; /* Warna Cream Lebih Soft */
     padding: 20px;     
     width: 70%;     
     margin: auto;     
     border-radius: 10px;     
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Lebih Soft */
     text-align: center; 
 }  
 
@@ -59,7 +59,7 @@ table {
     border-collapse: collapse;     
     width: 50%;     
     margin: 20px auto;     
-    background: #E1F5FE; /* Biru Muda */
+    background: #FFEDD5; /* Cream Soft */
     border: 1px solid #1E3A5F;  
     border-radius: 10px; 
 }  
@@ -96,3 +96,4 @@ footer {
     padding: 10px;     
     margin-top: 20px; 
 }  
+
