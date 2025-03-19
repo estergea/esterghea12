@@ -16,4 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Jalankan fungsi saat ukuran layar berubah
     window.addEventListener("resize", adjustImageSize);
 });
+function searchCollection() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let items = document.querySelectorAll("#collectionList li");
+
+    items.forEach(item => {
+        let text = item.textContent.toLowerCase();
+        item.style.display = text.includes(input) ? "block" : "none";
+    });
+}
+
 
