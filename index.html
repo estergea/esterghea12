@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Ester</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function searchEbook() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let ebooks = document.getElementById('ebookList').getElementsByTagName('li');
+            
+            for (let i = 0; i < ebooks.length; i++) {
+                let ebook = ebooks[i].innerText.toLowerCase();
+                if (ebook.includes(input)) {
+                    ebooks[i].style.display = "";
+                } else {
+                    ebooks[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -25,7 +40,8 @@
         </p>
         
         <h3>Koleksi E-Book</h3>
-        <ul>
+        <input type="text" id="searchInput" onkeyup="searchEbook()" placeholder="Cari e-book...">
+        <ul id="ebookList">
             <li><a href="Dok Buku Pengantar Bisnis.pdf" target="_blank">pengantar bisnis</a></li>
             <li><a href="569201-dasar-dasar-layanan-perpustakaan-68c36bca.pdf" target="_blank">dasar dasar layanan perpustakaan</a></li>
             <li><a href="Buku Gawat Darurat Medis dan Bedah.pdf" target="_blank">buku gawat darurat medis dan bedah</a></li>
@@ -39,3 +55,4 @@
     </footer>
 </body>
 </html>
+
