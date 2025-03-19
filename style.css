@@ -1,6 +1,6 @@
 body {     
-    background-color: #F0F8FF; 
-    color: #2E1B10;    
+    background-color: #FFF8E1; /* Warna Cream */
+    color: #1E3A5F; /* Warna Biru Tua */
     font-family: Arial, sans-serif;     
     margin: 0;     
     padding: 0;     
@@ -8,7 +8,7 @@ body {
 }  
 
 header {     
-    background-color: #5F9EA0;  
+    background-color: #1E88E5; /* Warna Biru */
     padding: 20px;     
     color: white;     
     font-size: 24px;     
@@ -18,13 +18,13 @@ header {
 nav {     
     display: flex;     
     justify-content: center;     
-    background-color: #F0F8FF;    
+    background-color: #FFF8E1; /* Warna Cream */
     padding: 10px; 
 }  
 
 nav .button {     
-    background-color: #008B8B;  
-    color: #333;     
+    background-color: #1565C0; /* Warna Biru */
+    color: white;     
     padding: 10px 20px;     
     margin: 5px;     
     text-decoration: none;     
@@ -33,11 +33,11 @@ nav .button {
 }  
 
 nav .button:hover {     
-    background-color: #90A4AE; 
+    background-color: #0D47A1; /* Warna Biru Lebih Gelap */
 }  
 
 main {     
-    background-color: #5F9EA0;      
+    background-color: #E3F2FD; /* Biru Muda */
     padding: 20px;     
     width: 70%;     
     margin: auto;     
@@ -47,9 +47,8 @@ main {
 }  
 
 h2 {     
-    color: #3E2723;  
+    color: #1E3A5F; /* Biru Tua */
 }  
-
 
 .table-container {     
     display: flex;     
@@ -60,19 +59,19 @@ table {
     border-collapse: collapse;     
     width: 50%;     
     margin: 20px auto;     
-    background: #CFD8DC;     
-    border: 1px solid #37474F;  
+    background: #E1F5FE; /* Biru Muda */
+    border: 1px solid #1E3A5F;  
     border-radius: 10px; 
 }  
 
 th, td {     
     padding: 10px;     
-    border: 1px solid #37474F;  
+    border: 1px solid #1E3A5F;  
     text-align: left; 
 }  
 
 th {     
-    background-color: #795548;     
+    background-color: #0D47A1; /* Biru Gelap */
     color: white; 
 }  
 
@@ -92,8 +91,8 @@ button:hover {
 }  
 
 footer {     
-    background-color: #5D4037;  
+    background-color: #1565C0; /* Biru */
     color: white;     
     padding: 10px;     
     margin-top: 20px; 
-}
+}  
