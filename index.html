@@ -6,6 +6,36 @@
     <title>Perpustakaan Ester</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Navigasi berita */
+        .berita-terbaru {
+            background-color: #ffcc00;
+            color: #000;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        #berita-teks {
+            display: inline-block;
+            animation: jalan-berita 15s linear infinite;
+        }
+
+        @keyframes jalan-berita {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Gaya e-book dan pencarian */
         #ebookList li {
             display: flex;
             align-items: center;
@@ -43,6 +73,12 @@
     </script>
 </head>
 <body>
+
+    <!-- Navigasi Berita Terbaru -->
+    <div class="berita-terbaru">
+        <p id="library news">📢 Berita Terbaru: Pendaftaran anggota baru dibuka sampai 30 Mei 2025! | 📚 Webinar Literasi Digital tanggal 20 Mei - Daftar Sekarang!</p>
+    </div>
+
     <header>
         <h1>PERPUSTAKAAN ESTER</h1>
         <nav>
@@ -50,6 +86,7 @@
             <a href="contact-us.html" class="button">Hubungi Kami</a>
         </nav>
     </header>
+
     <main>
         <h2>Selamat Datang di Perpustakaan Ester!</h2>
         <img src="gambarku.jpg" alt="Perpustakaan Ester" width="300">
@@ -86,6 +123,7 @@
             Browser Anda tidak mendukung pemutaran video.
         </video>
     </main>
+    
     <footer>
         <p>© 2025 Ester Gea</p>
     </footer>
