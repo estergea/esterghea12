@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Perpustakaan</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .event-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .event-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            width: 300px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .event-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .event-card h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+        }
+        .event-card p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .event-card a {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -19,15 +56,38 @@
 
     <main>
         <h2>Event Perpustakaan</h2>
-        <p>jelajahi event seru di perpustakaan Ester Gea! temukan berbagai kegiatan menarik, jangan lewatkan kesempatan untuk terlibat dalam setiap event yang saya bagikan .</p>
+        <p>Jelajahi event seru di Perpustakaan Ester Gea! Temukan berbagai kegiatan menarik, jangan lewatkan kesempatan untuk terlibat dalam setiap event yang saya bagikan.</p>
 
-        <div id="file-container"></div>
+        <!-- Galeri Event -->
+        <div class="event-list">
+            <div class="event-card">
+                <img src="kids talent festifal.jpeg" alt="Kids Talent Festival dan Product">
+                <h3>20-22 juni 2025</h3>
+                <p>calling alltenant fasion and accesories, childrens toys and books education,  health dan wellness, and  moms and dad clothings.</p>
+                <a href="https://www.instagram.com/p/DEHvplFytif/?igsh=c3lmZTlneGV3ODll" target="_blank">Lihat Detail</a>
+            </div>
 
+            <div class="event-card">
+                <img src="pasar literasi.jpeg" alt="Pasar Literasi ">
+                <h3>06 mei- 6 juli 2025</h3>
+                <p>mari merawat literasi.</p>
+                <a href="https://www.instagram.com/p/DJOdC7myM6H/?igsh=ZXI5dmM0bjI0bHFs" target="_blank">Unduh Materi</a>
+            </div>
+
+            <div class="event-card">
+                <img src="pemilihan duta literasi.jepg" alt="Pemilihan Duta Literasi">
+                <h3>menang kan hadiah </h3>
+                <p>jadi lah bagian dari perubahan besar di MIN 1 kediri.</p>
+                <a href="https://www.instagram.com/reel/C_ZYXKeRDgh/?igsh=MTRhenM4MWJ1eG1yMw==" target="_blank">Lihat Laporan</a>
+            </div>
+        </div>
+
+        <br>
         <a href="index.html" class="back-link">Kembali ke Beranda</a>
     </main>
 
     <footer>
         <p>© Ester Gea 2025</p>
     </footer>
-
-   
+</body>
+</html>
