@@ -1,126 +1,95 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Perpustakaan Ester</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      background-color: #FFF5DC;
-      font-family: Arial, sans-serif;
-    }
-
-    header {
-      text-align: center;
-      background-color: #87CEFA;
-      padding: 20px;
-    }
-
-    nav a.button {
-      display: inline-block;
-      background-color: yellow;
-      color: black;
-      padding: 10px 20px;
-      margin: 10px 5px;
-      text-decoration: none;
-      border: 2px solid black;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    nav a.button:hover {
-      background-color: orange;
-    }
-
-    #ebookList li {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-
-    #ebookList img {
-      margin-right: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      width: 100px;
-      height: auto;
-    }
-
-    input#searchInput {
-      margin-bottom: 20px;
-      padding: 5px;
-      width: 250px;
-    }
-
-    main {
-      padding: 30px;
-    }
-
-    footer {
-      text-align: center;
-      background-color: #87CEFA;
-      padding: 15px;
-      margin-top: 40px;
-    }
-
-    .tabel-perkalian {
-      margin-top: 40px;
-      overflow-x: auto;
-    }
-
-    .tabel-perkalian table {
-      border-collapse: collapse;
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: #ffffff;
-    }
-
-    .tabel-perkalian th,
-    .tabel-perkalian td {
-      border: 1px solid #999;
-      padding: 8px;
-      text-align: center;
-    }
-
-    .tabel-perkalian th {
-      background-color: #f2f2f2;
-    }
-
-    .tabel-perkalian caption {
-      font-weight: bold;
-      margin-bottom: 10px;
-      font-size: 1.2em;
-    }
-  </style>
-
-  <script>
-    function searchEbook() {
-      let input = document.getElementById('searchInput').value.toLowerCase();
-      let ebooks = document.getElementById('ebookList').getElementsByTagName('li');
-      
-      for (let i = 0; i < ebooks.length; i++) {
-        let ebookText = ebooks[i].innerText.toLowerCase();
-        if (ebookText.includes(input)) {
-          ebooks[i].style.display = "";
-        } else {
-          ebooks[i].style.display = "none";
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Ester</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #FFF5DC;
+            font-family: Arial, sans-serif;
         }
-      }
-    }
-  </script>
+
+        header {
+            text-align: center;
+            background-color: #87CEFA;
+            padding: 20px;
+        }
+
+        nav a.button {
+            display: inline-block;
+            background-color: yellow;
+            color: black;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            text-decoration: none;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        nav a.button:hover {
+            background-color: orange;
+        }
+
+        #ebookList li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        #ebookList img {
+            margin-right: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100px;
+            height: auto;
+        }
+
+        input#searchInput {
+            margin-bottom: 20px;
+            padding: 5px;
+            width: 250px;
+        }
+
+        main {
+            padding: 30px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #87CEFA;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+    <script>
+        function searchEbook() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let ebooks = document.getElementById('ebookList').getElementsByTagName('li');
+            
+            for (let i = 0; i < ebooks.length; i++) {
+                let ebookText = ebooks[i].innerText.toLowerCase();
+                if (ebookText.includes(input)) {
+                    ebooks[i].style.display = "";
+                } else {
+                    ebooks[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-  <header>
-    <h1>PERPUSTAKAAN ESTER</h1>
-    <nav>
-      <a href="index.html" class="button">Home</a>
-      <a href="about.html" class="button">About Me</a>
-      <a href="contact-us.html" class="button">Hubungi Kami</a>
-      <a href="berita.html" class="button">Event Perpustakaan</a>
-      <a href="#zona-perkalian" class="button">Zona Perkalian</a>
-    </nav>
+    <header>
+        <h1>PERPUSTAKAAN ESTER</h1>
+        <nav>
+            <a href="index.html" class="button">Home</a>
+            <a href="about.html" class="button">About Me</a>
+            <a href="contact-us.html" class="button">Hubungi Kami</a>
+            <a href="berita.html" class="button">Event Perpustakaan</a>
+            <a href="zona-perkalian.html" class="button">Zona Perkalian</a> <!-- Tambahan Navigasi -->
+        <nav>
   </header>
 
   <main>
