@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Kunjungan</title>
+    <style>
+        body {
+            background-color: #FFF5DC;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            background-color: #87CEFA;
+            padding: 20px;
+        }
+
+        nav a.button {
+            display: inline-block;
+            background-color: yellow;
+            color: black;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            text-decoration: none;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        nav a.button:hover {
+            background-color: orange;
+        }
+
+        main {
+            padding: 30px;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            background-color: #87CEFA;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #00BFFF;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #87CEFA;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Formulir Kunjungan Perpustakaan</h1>
+        <nav>
+            <a href="index.html" class="button">Home</a>
+            <a href="about.html" class="button">About Me</a>
+            <a href="contact-us.html" class="button">Hubungi Kami</a>
+            <a href="berita.html" class="button">Event Perpustakaan</a>
+            <a href="zonaperkalian.html" class="button">Zona Perkalian</a>
+            <a href="formulirkunjungan.html" class="button">Formulir Kunjungan</a>
+        </nav>
+    </header>
+
+    <main>
+        <form action="#" method="post">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="instansi">Asal Instansi/Sekolah:</label>
+            <input type="text" id="instansi" name="instansi">
+
+            <label for="keperluan">Keperluan Kunjungan:</label>
+            <select id="keperluan" name="keperluan">
+                <option value="baca">Membaca Buku</option>
+                <option value="pinjam">Meminjam Buku</option>
+                <option value="riset">Riset/Tugas</option>
+                <option value="lainnya">Lainnya</option>
+            </select>
+
+            <label for="pesan">Pesan/Kesan:</label>
+            <textarea id="pesan" name="pesan" rows="4"></textarea>
+
+            <button type="submit">Kirim</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2025 Ester Gea</p>
+    </footer>
+</body>
+</html>
