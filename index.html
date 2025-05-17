@@ -63,22 +63,15 @@
             padding: 15px;
             margin-top: 40px;
         }
-    </style>
-    <script>
-        function searchEbook() {
-            let input = document.getElementById('searchInput').value.toLowerCase();
-            let ebooks = document.getElementById('ebookList').getElementsByTagName('li');
-            
-            for (let i = 0; i < ebooks.length; i++) {
-                let ebookText = ebooks[i].innerText.toLowerCase();
-                if (ebookText.includes(input)) {
-                    ebooks[i].style.display = "";
-                } else {
-                    ebooks[i].style.display = "none";
-                }
-            }
+
+        #verifikasi {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 2px dashed orange;
+            background-color: #fff8e1;
+            border-radius: 10px;
         }
-    </script>
+    </style>
 </head>
 <body>
     <header>
@@ -90,11 +83,10 @@
             <a href="berita.html" class="button">Event Perpustakaan</a>
             <a href="zonaperkalian.html" class="button">Zona Perkalian</a>
             <a href="formulirkunjungan.html" class="button">Formulir Kunjungan</a>
-
         </nav>
     </header>
 
-    <main>
+    <main id="kontenUtama" style="display:none;">
         <h2>Selamat Datang di Perpustakaan Ester!</h2>
         <img src="gambarku.jpg" alt="Perpustakaan Ester" width="300">
         <p>
@@ -129,8 +121,40 @@
         </video>
     </main>
 
+    <div id="verifikasi" style="display:none; text-align: center;">
+        <p id="soal"></p>
+        <input type="text" id="jawaban" placeholder="Masukkan jawaban">
+        <button onclick="verifikasi()">Verifikasi</button>
+        <p id="error" style="color:red;"></p>
+    </div>
+    <p id="pesan" style="text-align:center; font-weight: bold; color: green;"></p>
+
     <footer>
         <p>© 2025 Ester Gea</p>
     </footer>
+
+    <!-- Script pencarian e-book -->
+    <script>
+        function searchEbook() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let ebooks = document.getElementById('ebookList').getElementsByTagName('li');
+            for (let i = 0; i < ebooks.length; i++) {
+                let ebookText = ebooks[i].innerText.toLowerCase();
+                if (ebookText.includes(input)) {
+                    ebooks[i].style.display = "";
+                } else {
+                    ebooks[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+    <!-- Hubungkan file JavaScript eksternal -->
+    <script src="dokumencookies.js"></script>
+    <script>
+        window.onload = function () {
+            inisialisasiVerifikasi();
+        };
+    </script>
 </body>
 </html>
