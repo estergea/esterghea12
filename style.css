@@ -1,59 +1,64 @@
 /* style.css */
 
+/* Body dan font */
 body {
-    background-color: #FFFFFF; /* putih bersih */
-    color: #000000; /* teks hitam */
+    background-color: #ffffff; /* putih bersih */
     font-family: Arial, sans-serif;
+    color: #000000; /* teks hitam */
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
+/* Header */
 header {
-    background-color: #000000; /* hitam */
-    padding: 20px;
-    color: #FFD100; /* kuning UI */
-    font-size: 24px;
+    background-color: #000000; /* hitam UI */
+    color: #ffd100; /* kuning UI */
+    padding: 20px 0;
+    font-size: 28px;
     font-weight: bold;
 }
 
+/* Navigasi */
 nav {
-    display: flex;
-    justify-content: center;
     background-color: #000000; /* hitam */
     padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 nav a.button {
-    background-color: #000000; /* tombol hitam */
-    color: #FFFFFF; /* tulisan putih */
+    background-color: #000000; /* hitam */
+    color: #ffffff; /* putih */
     padding: 10px 20px;
-    margin: 0 8px;
     text-decoration: none;
+    border: 2px solid #ffd100; /* border kuning */
     border-radius: 5px;
     font-weight: bold;
-    border: 2px solid #FFD100; /* border kuning */
     transition: background-color 0.3s ease, color 0.3s ease;
     display: inline-block;
 }
 
 nav a.button:hover {
-    background-color: #FFD100; /* kuning saat hover */
-    color: #000000; /* tulisan hitam */
-    border-color: #FFD100;
+    background-color: #ffd100; /* kuning */
+    color: #000000; /* hitam */
+    border-color: #ffd100;
 }
 
+/* Main content */
 main {
-    background: linear-gradient(135deg, #FFF9E1 0%, #FFFFFF 100%); /* putih ke kuning lembut */
+    background: linear-gradient(135deg, #fffbea 0%, #fff8a6 100%);
     padding: 30px;
-    width: 70%;
-    margin: 30px auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     color: #000000;
     text-align: left;
 }
 
+/* List eBook */
 #ebookList li {
     display: flex;
     align-items: center;
@@ -72,17 +77,19 @@ input#searchInput {
     margin-bottom: 20px;
     padding: 7px 10px;
     width: 250px;
-    border: 2px solid #FFD100;
+    border: 2px solid #ffd100;
     border-radius: 5px;
     font-size: 16px;
 }
 
+/* Footer */
 footer {
-    text-align: center;
     background-color: #000000; /* hitam */
-    color: #FFD100; /* kuning */
-    padding: 15px;
+    color: #ffd100; /* kuning */
+    padding: 15px 0;
     margin-top: 40px;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 /* Verifikasi box */
@@ -90,10 +97,13 @@ footer {
     display: none;
     margin-bottom: 20px;
     padding: 15px;
-    background-color: #FFF9E1; /* kuning lembut */
-    border: 2px solid #FFD100; /* border kuning */
+    background-color: #fffbea;
+    border: 2px solid #ffd100;
     border-radius: 8px;
-    text-align: center;
+    color: #000000;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #kontenUtama {
@@ -102,23 +112,23 @@ footer {
 
 #error {
     color: red;
-    margin-top: 10px;
+    font-weight: bold;
 }
 
 /* Tombol verifikasi */
 #verifikasi button {
     background-color: #000000;
-    color: #FFD100;
-    border: 2px solid #FFD100;
-    padding: 8px 15px;
+    color: #ffd100;
+    border: 2px solid #ffd100;
+    padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 10px;
 }
 
 #verifikasi button:hover {
-    background-color: #FFD100;
+    background-color: #ffd100;
     color: #000000;
-    border-color: #FFD100;
 }
+
