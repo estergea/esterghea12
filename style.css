@@ -1,6 +1,6 @@
 body {     
-    background-color: #FFF8E1; /* Warna Cream */
-    color: #1E3A5F; /* Warna Biru Tua */
+    background-color: #F5F7FA; /* Abu sangat terang, netral dan bersih */
+    color: #2C3E50; /* Biru tua ke abu-abuan, profesional */
     font-family: Arial, sans-serif;     
     margin: 0;     
     padding: 0;     
@@ -8,9 +8,9 @@ body {
 }  
 
 header {     
-    background-color: #90CAF9; /* Warna Biru Muda */
+    background-color: #34495E; /* Biru abu tua, solid dan elegan */
     padding: 20px;     
-    color: white;     
+    color: #ECF0F1; /* Putih abu lembut */
     font-size: 24px;     
     font-weight: bold; 
 }  
@@ -18,28 +18,33 @@ header {
 nav {     
     display: flex;     
     justify-content: center;     
-    background-color: #FFD700; /* Warna Kuning */
+    background-color: #BDC3C7; /* Abu medium, kalem tapi kontras */
     padding: 10px; 
 }  
 
 nav .button {     
-    background-color: #FFD700; /* Warna Kuning */
-    color: #1E3A5F; /* Biru Tua agar kontras */
+    background-color: #ECF0F1; /* Putih abu lembut */
+    color: #34495E; /* Warna header */
     padding: 10px 20px;     
     margin: 5px;     
     text-decoration: none;     
     border-radius: 5px;     
     font-weight: bold; 
-    border: 2px solid #1E3A5F; /* Tambah border agar lebih rapi */
+    border: 2px solid #34495E; /* Border warna header */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }  
 
 nav .button:hover {     
-    background-color: #FFC107; /* Kuning lebih gelap */
+    background-color: #34495E; /* Warna header */
+    color: #ECF0F1; /* Putih abu lembut */
 }  
 
 main {     
-    background-color: #FFF3D4; /* Warna Cream Lebih Soft */
+    background-color: #FFFFFF; /* Putih bersih */
     padding: 20px;     
     width: 70%;     
     margin: auto;     
-    border-radius: 10px;  
+    border-radius: 10px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Bayangan lembut agar lebih modern */
+}
+
