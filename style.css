@@ -1,6 +1,6 @@
 body {     
-    background-color: #F5F7FA; /* Abu sangat terang, netral dan bersih */
-    color: #2C3E50; /* Biru tua ke abu-abuan, profesional */
+    background-color: #FFFFFF; /* Putih bersih */
+    color: #000000; /* Hitam */
     font-family: Arial, sans-serif;     
     margin: 0;     
     padding: 0;     
@@ -8,9 +8,9 @@ body {
 }  
 
 header {     
-    background-color: #34495E; /* Biru abu tua, solid dan elegan */
+    background-color: #000000; /* Hitam */
     padding: 20px;     
-    color: #ECF0F1; /* Putih abu lembut */
+    color: #FFD100; /* Kuning khas UI */
     font-size: 24px;     
     font-weight: bold; 
 }  
@@ -18,25 +18,26 @@ header {
 nav {     
     display: flex;     
     justify-content: center;     
-    background-color: #BDC3C7; /* Abu medium, kalem tapi kontras */
+    background-color: #FFD100; /* Kuning UI */
     padding: 10px; 
 }  
 
 nav .button {     
-    background-color: #ECF0F1; /* Putih abu lembut */
-    color: #34495E; /* Warna header */
+    background-color: #000000; /* Hitam */
+    color: #FFD100; /* Kuning */
     padding: 10px 20px;     
     margin: 5px;     
     text-decoration: none;     
     border-radius: 5px;     
     font-weight: bold; 
-    border: 2px solid #34495E; /* Border warna header */
+    border: 2px solid #000000; /* Border hitam */
     transition: background-color 0.3s ease, color 0.3s ease;
 }  
 
 nav .button:hover {     
-    background-color: #34495E; /* Warna header */
-    color: #ECF0F1; /* Putih abu lembut */
+    background-color: #FFFFFF; /* Putih */
+    color: #000000; /* Hitam */
+    border: 2px solid #000000;
 }  
 
 main {     
@@ -45,6 +46,6 @@ main {
     width: 70%;     
     margin: auto;     
     border-radius: 10px; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Bayangan lembut agar lebih modern */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
