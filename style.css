@@ -2,7 +2,7 @@
 
 /* Body dan font */
 body {
-    background-color: #ffffff; /* putih bersih */
+    background-color: #ffffff; /* putih polos */
     font-family: Arial, sans-serif;
     color: #000000; /* teks hitam */
     margin: 0;
@@ -12,8 +12,8 @@ body {
 
 /* Header */
 header {
-    background-color: #000000; /* hitam UI */
-    color: #ffd100; /* kuning UI */
+    background-color: #000000; /* hitam */
+    color: #ffffff; /* putih */
     padding: 20px 0;
     font-size: 28px;
     font-weight: bold;
@@ -29,8 +29,8 @@ nav {
 }
 
 nav a.button {
-    background-color: #000000; /* hitam */
-    color: #ffffff; /* putih */
+    background-color: #ffd100; /* kuning */
+    color: #000000; /* tulisan hitam */
     padding: 10px 20px;
     text-decoration: none;
     border: 2px solid #ffd100; /* border kuning */
@@ -41,19 +41,19 @@ nav a.button {
 }
 
 nav a.button:hover {
-    background-color: #ffd100; /* kuning */
-    color: #000000; /* hitam */
+    background-color: #000000; /* hitam */
+    color: #ffd100; /* kuning */
     border-color: #ffd100;
 }
 
 /* Main content */
 main {
-    background: linear-gradient(135deg, #fffbea 0%, #fff8a6 100%);
+    background-color: #ffffff; /* putih polos */
     padding: 30px;
     width: 80%;
     margin: 20px auto;
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: none; /* hilangkan bayangan */
     color: #000000;
     text-align: left;
 }
@@ -68,7 +68,7 @@ main {
 #ebookList img {
     margin-right: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: none;
     width: 100px;
     height: auto;
 }
@@ -85,7 +85,7 @@ input#searchInput {
 /* Footer */
 footer {
     background-color: #000000; /* hitam */
-    color: #ffd100; /* kuning */
+    color: #ffffff; /* putih */
     padding: 15px 0;
     margin-top: 40px;
     font-weight: bold;
@@ -97,7 +97,7 @@ footer {
     display: none;
     margin-bottom: 20px;
     padding: 15px;
-    background-color: #fffbea;
+    background-color: #ffffff;
     border: 2px solid #ffd100;
     border-radius: 8px;
     color: #000000;
@@ -117,8 +117,8 @@ footer {
 
 /* Tombol verifikasi */
 #verifikasi button {
-    background-color: #000000;
-    color: #ffd100;
+    background-color: #ffd100;
+    color: #000000;
     border: 2px solid #ffd100;
     padding: 8px 16px;
     border-radius: 5px;
@@ -128,7 +128,7 @@ footer {
 }
 
 #verifikasi button:hover {
-    background-color: #ffd100;
-    color: #000000;
+    background-color: #000000;
+    color: #ffd100;
 }
 
