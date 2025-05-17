@@ -63,25 +63,27 @@
             padding: 15px;
             margin-top: 40px;
         }
-    </style>
-    <script>
-        function searchEbook() {
-            let input = document.getElementById('searchInput').value.toLowerCase();
-            let ebooks = document.getElementById('ebookList').getElementsByTagName('li');
-            
-            for (let i = 0; i < ebooks.length; i++) {
-                let ebookText = ebooks[i].innerText.toLowerCase();
-                if (ebookText.includes(input)) {
-                    ebooks[i].style.display = "";
-                } else {
-                    ebooks[i].style.display = "none";
-                }
-            }
+
+        #verifikasi {
+            display: none;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 2px solid #ccc;
+            border-radius: 8px;
         }
-    </script>
+
+        #kontenUtama {
+            display: none;
+        }
+
+        #error {
+            color: red;
+        }
+    </style>
 </head>
+
 <body onload="inisialisasiVerifikasi()">
->
     <header>
         <h1>PERPUSTAKAAN ESTER</h1>
         <nav>
@@ -91,48 +93,74 @@
             <a href="berita.html" class="button">Event Perpustakaan</a>
             <a href="zonaperkalian.html" class="button">Zona Perkalian</a>
             <a href="formulirkunjungan.html" class="button">Formulir Kunjungan</a>
-
         </nav>
     </header>
 
     <main>
-        <h2>Selamat Datang di Perpustakaan Ester!</h2>
-        <img src="gambarku.jpg" alt="Perpustakaan Ester" width="300">
-        <p>
-            Holla, welcome to my library! Temukan dunia dalam setiap halaman. Ini adalah Homepage Perpustakaan personal Ester. 
-            Perpustakaan ini dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan. 
-        </p>
+        <!-- Kotak Verifikasi -->
+        <div id="verifikasi">
+            <p id="soal"></p>
+            <input type="number" id="jawaban" placeholder="Masukkan jawaban">
+            <button onclick="verifikasi()">Verifikasi</button>
+            <p id="error"></p>
+        </div>
 
-        <h3>Koleksi E-Book</h3>
-        <input type="text" id="searchInput" onkeyup="searchEbook()" placeholder="Cari e-book...">
-        <ul id="ebookList">
-            <li>
-                <img src="gambar pengantar bisnis.jpeg" alt="Pengantar Bisnis">
-                <a href="Dok Buku Pengantar Bisnis.pdf" target="_blank">pengantar bisnis teori dan konsep</a>
-            </li>
-            <li>
-                <img src="gambar dasar dasar layanan perpustakaan.jpeg" alt="Layanan Perpustakaan">
-                <a href="569201-dasar-dasar-layanan-perpustakaan-68c36bca.pdf" target="_blank">dasar dasar layanan perpustakaan</a>
-            </li>
-            <li>
-                <img src="gambar bedah.jpeg" alt="Gawat Darurat">
-                <a href="Buku Gawat Darurat Medis dan Bedah.pdf" target="_blank">buku gawat darurat medis dan bedah</a>
-            </li>
-        </ul>
+        <div id="pesan"></div>
 
-        <h3>Kerja Sama dan Referensi</h3>
-        <a href="https://perpustakaan.poltekparmedan.ac.id/kki/" target="_blank">Perpustakaan Politeknik Pariwisata Medan</a>
+        <!-- Konten utama akan muncul setelah verifikasi -->
+        <div id="kontenUtama">
+            <h2>Selamat Datang di Perpustakaan Ester!</h2>
+            <img src="gambarku.jpg" alt="Perpustakaan Ester" width="300">
+            <p>
+                Holla, welcome to my library! Temukan dunia dalam setiap halaman. Ini adalah Homepage Perpustakaan personal Ester. 
+                Perpustakaan ini dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan. 
+            </p>
 
-        <h3>Video Perpustakaan</h3>
-        <video width="300" height="auto" controls>
-            <source src="WhatsApp Video 2025-03-19 at 20.29.29.mp4" type="video/mp4">
-            Browser Anda tidak mendukung pemutaran video.
-        </video>
+            <h3>Koleksi E-Book</h3>
+            <input type="text" id="searchInput" onkeyup="searchEbook()" placeholder="Cari e-book...">
+            <ul id="ebookList">
+                <li>
+                    <img src="gambar pengantar bisnis.jpeg" alt="Pengantar Bisnis">
+                    <a href="Dok Buku Pengantar Bisnis.pdf" target="_blank">pengantar bisnis teori dan konsep</a>
+                </li>
+                <li>
+                    <img src="gambar dasar dasar layanan perpustakaan.jpeg" alt="Layanan Perpustakaan">
+                    <a href="569201-dasar-dasar-layanan-perpustakaan-68c36bca.pdf" target="_blank">dasar dasar layanan perpustakaan</a>
+                </li>
+                <li>
+                    <img src="gambar bedah.jpeg" alt="Gawat Darurat">
+                    <a href="Buku Gawat Darurat Medis dan Bedah.pdf" target="_blank">buku gawat darurat medis dan bedah</a>
+                </li>
+            </ul>
+
+            <h3>Kerja Sama dan Referensi</h3>
+            <a href="https://perpustakaan.poltekparmedan.ac.id/kki/" target="_blank">Perpustakaan Politeknik Pariwisata Medan</a>
+
+            <h3>Video Perpustakaan</h3>
+            <video width="300" height="auto" controls>
+                <source src="WhatsApp Video 2025-03-19 at 20.29.29.mp4" type="video/mp4">
+                Browser Anda tidak mendukung pemutaran video.
+            </video>
+        </div>
     </main>
 
     <footer>
         <p>© 2025 Ester Gea</p>
     </footer>
+
+    <!-- Pencarian eBook -->
+    <script>
+        function searchEbook() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let ebooks = document.getElementById('ebookList').getElementsByTagName('li');
+            for (let i = 0; i < ebooks.length; i++) {
+                let ebookText = ebooks[i].innerText.toLowerCase();
+                ebooks[i].style.display = ebookText.includes(input) ? "" : "none";
+            }
+        }
+    </script>
+
+    <!-- Script cookies eksternal -->
     <script src="dokumencookies.js"></script>
 </body>
 </html>
