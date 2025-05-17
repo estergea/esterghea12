@@ -20,22 +20,22 @@ function getCookie(nama) {
     return "";
 }
 
-// Soal verifikasi (acak)
+// Soal acak
 let angka1 = Math.floor(Math.random() * 10) + 1;
 let angka2 = Math.floor(Math.random() * 10) + 1;
 let hasil = angka1 + angka2;
 
-// Fungsi untuk menampilkan soal
+// Tampilkan soal verifikasi
 function tampilkanSoal() {
     document.getElementById("verifikasi").style.display = "block";
-    document.getElementById("soal").innerText = Berapakah ${angka1} + ${angka2}?;
+    document.getElementById("soal").innerText = `Berapakah ${angka1} + ${angka2}?`;
 }
 
-// Fungsi untuk verifikasi jawaban
+// Verifikasi jawaban user
 function verifikasi() {
     const jawaban = parseInt(document.getElementById("jawaban").value);
     if (jawaban === hasil) {
-        setCookie("manusia", "ya", 7); // Simpan cookie selama 7 hari
+        setCookie("manusia", "ya", 7);
         document.getElementById("pesan").innerText = "Verifikasi berhasil! Anda manusia.";
         document.getElementById("verifikasi").style.display = "none";
         document.getElementById("kontenUtama").style.display = "block";
@@ -45,7 +45,7 @@ function verifikasi() {
     }
 }
 
-// Fungsi utama saat halaman dimuat
+// Cek apakah sudah ada cookie
 function inisialisasiVerifikasi() {
     if (getCookie("manusia") === "ya") {
         document.getElementById("pesan").innerText = "Anda sudah terverifikasi sebagai manusia.";
@@ -54,3 +54,4 @@ function inisialisasiVerifikasi() {
         tampilkanSoal();
     }
 }
+
