@@ -22,18 +22,19 @@ function getCookie(nama) {
     return "";
 }
 
-// Soal acak
+// Soal acak untuk verifikasi sederhana
 let angka1 = Math.floor(Math.random() * 10) + 1;
 let angka2 = Math.floor(Math.random() * 10) + 1;
 let hasil = angka1 + angka2;
 
-// Tampilkan form nama + soal verifikasi
+// Tampilkan form verifikasi dan soal
 function tampilkanSoal() {
     document.getElementById("verifikasi").style.display = "block";
     document.getElementById("soal").innerText = `Halo, siapa nama Anda? Dan berapakah ${angka1} + ${angka2}?`;
+    document.getElementById("kontenUtama").style.display = "none"; // sembunyikan konten utama
 }
 
-// Proses verifikasi
+// Proses verifikasi jawaban dan nama
 function verifikasi() {
     const jawaban = parseInt(document.getElementById("jawaban").value);
     const nama = document.getElementById("namaPengunjung").value.trim();
@@ -55,15 +56,17 @@ function verifikasi() {
     }
 }
 
-// Cek apakah sudah terverifikasi
+// Inisialisasi verifikasi saat halaman load
 function inisialisasiVerifikasi() {
     const status = getCookie("manusia");
     const nama = getCookie("pengunjung");
 
     if (status === "ya") {
         document.getElementById("pesan").innerText = `Selamat datang kembali, ${nama}!`;
+        document.getElementById("verifikasi").style.display = "none";
         document.getElementById("kontenUtama").style.display = "block";
     } else {
         tampilkanSoal();
     }
 }
+
