@@ -4,77 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Ester</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background-color: #FFF5DC;
+            background-color: white;
+            color: black;
             font-family: Arial, sans-serif;
+            margin: 0;
         }
 
         header {
             text-align: center;
-            background-color: #87CEFA;
+            background-color: black;
+            color: white;
             padding: 20px;
+        }
+
+        nav {
+            margin-top: 10px;
         }
 
         nav a.button {
             display: inline-block;
-            background-color: yellow;
+            background-color: white;
             color: black;
             padding: 10px 20px;
             margin: 10px 5px;
             text-decoration: none;
-            border: 2px solid black;
+            border: 2px solid white;
             border-radius: 5px;
             font-weight: bold;
         }
 
         nav a.button:hover {
-            background-color: orange;
+            background-color: gray;
+            color: white;
+        }
+
+        main {
+            padding: 30px;
+            background-color: white;
+        }
+
+        #verifikasi {
+            display: none;
+            background-color: black;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        #kontenUtama {
+            display: none;
+        }
+
+        h2, h3 {
+            color: black;
+        }
+
+        #gambarUtama {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #gambarUtama img {
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        #searchInput {
+            padding: 8px;
+            width: 250px;
+            margin-bottom: 20px;
+        }
+
+        #ebookSection {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #ebookList {
+            list-style: none;
+            padding-left: 0;
+            max-width: 500px;
         }
 
         #ebookList li {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         #ebookList img {
             margin-right: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             width: 100px;
             height: auto;
         }
 
-        input#searchInput {
-            margin-bottom: 20px;
-            padding: 5px;
-            width: 250px;
+        #kerjasamaVideo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
         }
 
-        main {
-            padding: 30px;
+        video {
+            width: 300px;
+            height: auto;
+            margin-top: 20px;
         }
 
         footer {
             text-align: center;
-            background-color: #87CEFA;
+            background-color: black;
+            color: white;
             padding: 15px;
             margin-top: 40px;
-        }
-
-        #verifikasi {
-            display: none;
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #f9f9f9;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-        }
-
-        #kontenUtama {
-            display: none;
         }
 
         #error {
@@ -82,7 +128,6 @@
         }
     </style>
 </head>
-
 <body onload="inisialisasiVerifikasi()">
     <header>
         <h1>PERPUSTAKAAN ESTER</h1>
@@ -107,40 +152,47 @@
 
         <div id="pesan"></div>
 
-        <!-- Konten utama akan muncul setelah verifikasi -->
         <div id="kontenUtama">
             <h2>Selamat Datang di Perpustakaan Ester!</h2>
-            <img src="gambarku.jpg" alt="Perpustakaan Ester" width="300">
+
+            <div id="gambarUtama">
+                <img src="gambarku.jpg" alt="Perpustakaan Ester">
+            </div>
+
             <p>
                 Holla, welcome to my library! Temukan dunia dalam setiap halaman. Ini adalah Homepage Perpustakaan personal Ester. 
-                Perpustakaan ini dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan. 
+                Perpustakaan ini dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan.
             </p>
 
             <h3>Koleksi E-Book</h3>
             <input type="text" id="searchInput" onkeyup="searchEbook()" placeholder="Cari e-book...">
-            <ul id="ebookList">
-                <li>
-                    <img src="gambar pengantar bisnis.jpeg" alt="Pengantar Bisnis">
-                    <a href="Dok Buku Pengantar Bisnis.pdf" target="_blank">pengantar bisnis teori dan konsep</a>
-                </li>
-                <li>
-                    <img src="gambar dasar dasar layanan perpustakaan.jpeg" alt="Layanan Perpustakaan">
-                    <a href="569201-dasar-dasar-layanan-perpustakaan-68c36bca.pdf" target="_blank">dasar dasar layanan perpustakaan</a>
-                </li>
-                <li>
-                    <img src="gambar bedah.jpeg" alt="Gawat Darurat">
-                    <a href="Buku Gawat Darurat Medis dan Bedah.pdf" target="_blank">buku gawat darurat medis dan bedah</a>
-                </li>
-            </ul>
+            <div id="ebookSection">
+                <ul id="ebookList">
+                    <li>
+                        <img src="gambar pengantar bisnis.jpeg" alt="Pengantar Bisnis">
+                        <a href="Dok Buku Pengantar Bisnis.pdf" target="_blank">pengantar bisnis teori dan konsep</a>
+                    </li>
+                    <li>
+                        <img src="gambar dasar dasar layanan perpustakaan.jpeg" alt="Layanan Perpustakaan">
+                        <a href="569201-dasar-dasar-layanan-perpustakaan-68c36bca.pdf" target="_blank">dasar dasar layanan perpustakaan</a>
+                    </li>
+                    <li>
+                        <img src="gambar bedah.jpeg" alt="Gawat Darurat">
+                        <a href="Buku Gawat Darurat Medis dan Bedah.pdf" target="_blank">buku gawat darurat medis dan bedah</a>
+                    </li>
+                </ul>
+            </div>
 
-            <h3>Kerja Sama dan Referensi</h3>
-            <a href="https://perpustakaan.poltekparmedan.ac.id/kki/" target="_blank">Perpustakaan Politeknik Pariwisata Medan</a>
+            <div id="kerjasamaVideo">
+                <h3>Kerja Sama dan Referensi</h3>
+                <a href="https://perpustakaan.poltekparmedan.ac.id/kki/" target="_blank">Perpustakaan Politeknik Pariwisata Medan</a>
 
-            <h3>Video Perpustakaan</h3>
-            <video width="300" height="auto" controls>
-                <source src="WhatsApp Video 2025-03-19 at 20.29.29.mp4" type="video/mp4">
-                Browser Anda tidak mendukung pemutaran video.
-            </video>
+                <h3>Video Perpustakaan</h3>
+                <video controls>
+                    <source src="WhatsApp Video 2025-03-19 at 20.29.29.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung pemutaran video.
+                </video>
+            </div>
         </div>
     </main>
 
@@ -148,7 +200,6 @@
         <p>© 2025 Ester Gea</p>
     </footer>
 
-    <!-- Pencarian eBook -->
     <script>
         function searchEbook() {
             let input = document.getElementById('searchInput').value.toLowerCase();
@@ -160,7 +211,6 @@
         }
     </script>
 
-    <!-- Script cookies eksternal -->
     <script src="dokumencookies.js"></script>
 </body>
 </html>
