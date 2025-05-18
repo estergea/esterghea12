@@ -52,19 +52,20 @@
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 20px;
+            max-width: 400px;
         }
 
         #kontenUtama {
             display: none;
         }
 
-        h2, h3 {
-            color: black;
-        }
-
-        #gambarUtama {
-            text-align: center;
-            margin-bottom: 30px;
+        #welcomeSection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
         }
 
         #gambarUtama img {
@@ -72,21 +73,35 @@
             border-radius: 10px;
         }
 
+        #welcomeText {
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2, h3 {
+            color: black;
+            text-align: center;
+        }
+
+        #searchWrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         #searchInput {
             padding: 8px;
             width: 250px;
-            margin-bottom: 20px;
         }
 
         #ebookSection {
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
         }
 
         #ebookList {
             list-style: none;
             padding-left: 0;
-            max-width: 500px;
+            max-width: 600px;
         }
 
         #ebookList li {
@@ -126,6 +141,12 @@
         #error {
             color: red;
         }
+
+        .leftAligned {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
     </style>
 </head>
 <body onload="inisialisasiVerifikasi()">
@@ -143,7 +164,7 @@
 
     <main>
         <!-- Kotak Verifikasi -->
-        <div id="verifikasi">
+        <div id="verifikasi" class="leftAligned">
             <p id="soal"></p>
             <input type="number" id="jawaban" placeholder="Masukkan jawaban">
             <button onclick="verifikasi()">Verifikasi</button>
@@ -152,20 +173,25 @@
 
         <div id="pesan"></div>
 
+        <!-- Konten utama -->
         <div id="kontenUtama">
-            <h2>Selamat Datang di Perpustakaan Ester!</h2>
-
-            <div id="gambarUtama">
-                <img src="gambarku.jpg" alt="Perpustakaan Ester">
+            <div id="welcomeSection">
+                <div id="gambarUtama">
+                    <img src="gambarku.jpg" alt="Perpustakaan Ester">
+                </div>
+                <div id="welcomeText">
+                    <h2>Selamat Datang di Perpustakaan Ester!</h2>
+                    <p>
+                        Holla, welcome to my library! Temukan dunia dalam setiap halaman. Ini adalah Homepage Perpustakaan personal Ester. 
+                        Perpustakaan ini dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan.
+                    </p>
+                </div>
             </div>
 
-            <p>
-                Holla, welcome to my library! Temukan dunia dalam setiap halaman. Ini adalah Homepage Perpustakaan personal Ester. 
-                Perpustakaan ini dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan.
-            </p>
-
             <h3>Koleksi E-Book</h3>
-            <input type="text" id="searchInput" onkeyup="searchEbook()" placeholder="Cari e-book...">
+            <div id="searchWrapper">
+                <input type="text" id="searchInput" onkeyup="searchEbook()" placeholder="Cari e-book...">
+            </div>
             <div id="ebookSection">
                 <ul id="ebookList">
                     <li>
@@ -214,3 +240,4 @@
     <script src="dokumencookies.js"></script>
 </body>
 </html>
+
