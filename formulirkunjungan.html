@@ -6,13 +6,16 @@
     <title>Formulir Kunjungan</title>
     <style>
         body {
-            background-color: #FFF5DC;
+            background-color: white;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         header {
             text-align: center;
-            background-color: #87CEFA;
+            background-color: black;
+            color: yellow;
             padding: 20px;
         }
 
@@ -59,6 +62,11 @@
             border: 1px solid #ccc;
         }
 
+        /* Dropdown berubah kuning saat aktif */
+        form select:focus {
+            background-color: yellow;
+        }
+
         form button {
             background-color: #87CEFA;
             color: black;
@@ -73,9 +81,26 @@
             background-color: #00BFFF;
         }
 
+        .back-link {
+            display: inline-block;
+            margin: 30px auto;
+            text-decoration: none;
+            background-color: yellow;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            border: 2px solid black;
+        }
+
+        .back-link:hover {
+            background-color: orange;
+        }
+
         footer {
             text-align: center;
-            background-color: #87CEFA;
+            background-color: black;
+            color: white;
             padding: 15px;
             margin-top: 40px;
         }
@@ -119,6 +144,11 @@
 
             <button type="submit">Kirim</button>
         </form>
+
+        <!-- Link kembali ke beranda -->
+        <div style="text-align:center;">
+            <a href="index.html" class="back-link">Kembali ke Beranda</a>
+        </div>
     </main>
 
     <footer>
