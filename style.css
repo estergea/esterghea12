@@ -9,37 +9,87 @@
         text-align: center;
         background-color: black;
         padding: 20px;
+    }
+
+    header h1 {
         color: white;
+    }
+
+    nav {
+        background-color: black;
+        padding: 10px 0;
     }
 
     nav a.button {
         display: inline-block;
-        background-color: yellow;
+        background-color: white;
         color: black;
         padding: 10px 20px;
         margin: 10px 5px;
         text-decoration: none;
-        border: 2px solid black;
+        border: none;
         border-radius: 5px;
         font-weight: bold;
     }
 
     nav a.button:hover {
-        background-color: orange;
+        background-color: gray;
+        color: white;
     }
 
-    #ebookList li {
-        display: block;
+    main {
+        padding: 30px;
+    }
+
+    h2, h3 {
+        color: white;
+    }
+
+    #verifikasi {
+        display: none;
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: white;
+        color: black;
+        border-radius: 8px;
+    }
+
+    #kontenUtama {
+        display: none;
+    }
+
+    #pesan {
         text-align: center;
+    }
+
+    /* Gambar utama di tengah */
+    #gambarUtama {
+        display: flex;
+        justify-content: center;
         margin-bottom: 30px;
     }
 
+    #gambarUtama img {
+        width: 300px;
+        border-radius: 10px;
+    }
+
+    #ebookList {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    #ebookList li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        color: white;
+    }
+
     #ebookList img {
-        display: block;
-        margin: 0 auto 10px auto;
+        margin-right: 15px;
         border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        width: 150px;
+        width: 100px;
         height: auto;
     }
 
@@ -48,14 +98,16 @@
         padding: 5px;
         width: 250px;
         display: block;
-        margin-left: auto;
-        margin-right: auto;
     }
 
-    main {
-        padding: 30px;
-        background-color: white;
-        color: black;
+    video {
+        margin-top: 20px;
+        width: 300px;
+        display: block;
+    }
+
+    a {
+        color: white;
     }
 
     footer {
@@ -66,40 +118,8 @@
         color: white;
     }
 
-    #verifikasi {
-        display: none;
-        margin-bottom: 20px;
-        padding: 15px;
-        background-color: yellow;
-        color: black;
-        border: 2px solid #ccc;
-        border-radius: 8px;
-    }
-
-    #kontenUtama {
-        display: none;
-        background-color: yellow;
-        color: black;
-        padding: 20px;
-        border-radius: 10px;
-    }
-
-    #pesan {
-        text-align: center;
-    }
-
-    #kontenUtama h2, #kontenUtama h3 {
-        text-align: center;
-    }
-
-    video {
-        display: block;
-        margin: 0 auto;
-    }
-
     #error {
         color: red;
         text-align: center;
     }
 </style>
-
