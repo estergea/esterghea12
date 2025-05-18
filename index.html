@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Perpustakaan Ester</title>
   <style>
     body {
@@ -11,20 +11,17 @@
       font-family: Arial, sans-serif;
       margin: 0;
     }
-
     header {
       text-align: center;
       background-color: black;
       color: white;
       padding: 20px;
     }
-
     nav {
       background-color: yellow;
       text-align: center;
       padding: 10px 0;
     }
-
     nav a.button {
       display: inline-block;
       background-color: yellow;
@@ -36,32 +33,30 @@
       border-radius: 5px;
       font-weight: bold;
     }
-
     nav a.button:hover {
       background-color: orange;
       color: white;
     }
-
     main {
       padding: 30px;
       background-color: white;
       color: black;
     }
-
     #verifikasi {
-      display: none;
       background-color: black;
       color: white;
       padding: 15px;
       border-radius: 8px;
       margin-bottom: 20px;
       max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
     }
-
     #kontenUtama {
       display: none;
     }
-
     #welcomeSection {
       display: flex;
       justify-content: center;
@@ -70,37 +65,30 @@
       margin-bottom: 40px;
       flex-wrap: wrap;
     }
-
     #gambarUtama img {
       width: 300px;
       border-radius: 10px;
     }
-
     #welcomeText {
       max-width: 400px;
       text-align: center;
     }
-
     h2, h3 {
       color: black;
       text-align: center;
     }
-
     #searchWrapper {
       text-align: center;
       margin-bottom: 20px;
     }
-
     #searchInput {
       padding: 8px;
       width: 250px;
     }
-
     #ebookSection {
       display: flex;
       justify-content: center;
     }
-
     #ebookList {
       list-style: none;
       padding-left: 0;
@@ -109,7 +97,6 @@
       gap: 20px;
       justify-content: center;
     }
-
     #ebookList li {
       display: flex;
       flex-direction: column;
@@ -117,7 +104,6 @@
       width: 150px;
       text-align: center;
     }
-
     #ebookList img {
       margin-bottom: 10px;
       border-radius: 8px;
@@ -125,20 +111,17 @@
       height: 140px;
       object-fit: cover;
     }
-
     #kerjasamaVideo {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-top: 50px;
     }
-
     video {
       width: 300px;
       height: auto;
       margin-top: 20px;
     }
-
     footer {
       text-align: center;
       background-color: black;
@@ -146,15 +129,18 @@
       padding: 15px;
       margin-top: 40px;
     }
-
     #error {
       color: red;
     }
-
-    .leftAligned {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+    .leftAligned input, .leftAligned button {
+      font-size: 16px;
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+    }
+    .leftAligned input {
+      width: 100%;
+      max-width: 380px;
     }
   </style>
 </head>
@@ -175,8 +161,9 @@
   <main>
     <!-- Kotak Verifikasi -->
     <div id="verifikasi" class="leftAligned">
+      <input type="text" id="namaPengunjung" placeholder="Masukkan nama Anda" />
       <p id="soal"></p>
-      <input type="number" id="jawaban" placeholder="Masukkan jawaban">
+      <input type="number" id="jawaban" placeholder="Masukkan jawaban" />
       <button onclick="verifikasi()">Verifikasi</button>
       <p id="error"></p>
     </div>
@@ -187,7 +174,7 @@
     <div id="kontenUtama">
       <div id="welcomeSection">
         <div id="gambarUtama">
-          <img src="gambarku.jpg" alt="Perpustakaan Ester">
+          <img src="gambarku.jpg" alt="Perpustakaan Ester" />
         </div>
         <div id="welcomeText">
           <h2>Selamat Datang di Perpustakaan Ester!</h2>
@@ -200,20 +187,20 @@
 
       <h3>Koleksi E-Book</h3>
       <div id="searchWrapper">
-        <input type="text" id="searchInput" onkeyup="searchEbook()" placeholder="Cari e-book...">
+        <input type="text" id="searchInput" onkeyup="searchEbook()" placeholder="Cari e-book..." />
       </div>
       <div id="ebookSection">
         <ul id="ebookList">
           <li>
-            <img src="gambar pengantar bisnis.jpeg" alt="Pengantar Bisnis">
+            <img src="gambar pengantar bisnis.jpeg" alt="Pengantar Bisnis" />
             <a href="Dok Buku Pengantar Bisnis.pdf" target="_blank">pengantar bisnis teori dan konsep</a>
           </li>
           <li>
-            <img src="gambar dasar dasar layanan perpustakaan.jpeg" alt="Layanan Perpustakaan">
+            <img src="gambar dasar dasar layanan perpustakaan.jpeg" alt="Layanan Perpustakaan" />
             <a href="569201-dasar-dasar-layanan-perpustakaan-68c36bca.pdf" target="_blank">dasar dasar layanan perpustakaan</a>
           </li>
           <li>
-            <img src="gambar bedah.jpeg" alt="Gawat Darurat">
+            <img src="gambar bedah.jpeg" alt="Gawat Darurat" />
             <a href="Buku Gawat Darurat Medis dan Bedah.pdf" target="_blank">buku gawat darurat medis dan bedah</a>
           </li>
         </ul>
@@ -225,7 +212,7 @@
 
         <h3>Video Perpustakaan</h3>
         <video controls>
-          <source src="WhatsApp Video 2025-03-19 at 20.29.29.mp4" type="video/mp4">
+          <source src="WhatsApp Video 2025-03-19 at 20.29.29.mp4" type="video/mp4" />
           Browser Anda tidak mendukung pemutaran video.
         </video>
       </div>
@@ -237,12 +224,57 @@
   </footer>
 
   <script>
+    // Fungsi untuk filter e-book
     function searchEbook() {
       let input = document.getElementById('searchInput').value.toLowerCase();
       let ebooks = document.getElementById('ebookList').getElementsByTagName('li');
       for (let i = 0; i < ebooks.length; i++) {
         let ebookText = ebooks[i].innerText.toLowerCase();
         ebooks[i].style.display = ebookText.includes(input) ? "" : "none";
+      }
+    }
+
+    // Variabel global untuk soal perkalian
+    let angka1, angka2;
+
+    // Inisialisasi soal verifikasi
+    function inisialisasiVerifikasi() {
+      // Tampilkan verifikasi dan sembunyikan konten utama
+      document.getElementById('verifikasi').style.display = 'flex';
+      document.getElementById('kontenUtama').style.display = 'none';
+
+      // Buat soal perkalian sederhana
+      angka1 = Math.floor(Math.random() * 10) + 1;
+      angka2 = Math.floor(Math.random() * 10) + 1;
+
+      // Tampilkan soal
+      document.getElementById('soal').innerText = `Berapa hasil dari ${angka1} x ${angka2}?`;
+      document.getElementById('error').innerText = '';
+      document.getElementById('namaPengunjung').value = '';
+      document.getElementById('jawaban').value = '';
+    }
+
+    // Fungsi verifikasi jawaban dan nama
+    function verifikasi() {
+      let nama = document.getElementById('namaPengunjung').value.trim();
+      let jawaban = parseInt(document.getElementById('jawaban').value);
+
+      if (!nama) {
+        document.getElementById('error').innerText = 'Mohon masukkan nama Anda.';
+        return;
+      }
+      if (isNaN(jawaban)) {
+        document.getElementById('error').innerText = 'Mohon masukkan jawaban yang valid.';
+        return;
+      }
+      if (jawaban === angka1 * angka2) {
+        // Jika benar, sembunyikan verifikasi dan tampilkan konten utama
+        document.getElementById('verifikasi').style.display = 'none';
+        document.getElementById('kontenUtama').style.display = 'block';
+        document.getElementById('pesan').innerText = `Selamat datang, ${nama}! Anda berhasil diverifikasi.`;
+        document.getElementById('error').innerText = '';
+      } else {
+        document.getElementById('error').innerText = 'Jawaban salah. Silakan coba lagi.';
       }
     }
   </script>
