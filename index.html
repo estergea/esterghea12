@@ -1,247 +1,252 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Ester</title>
-    <style>
-        body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
-            margin: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perpustakaan Ester</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
 
-        header {
-            text-align: center;
-            background-color: black;
-            color: white;
-            padding: 20px;
-        }
+    header {
+      text-align: center;
+      background-color: black;
+      color: white;
+      padding: 20px;
+    }
 
-        nav {
-            margin-top: 10px;
-        }
+    nav {
+      background-color: yellow;
+      text-align: center;
+      padding: 10px 0;
+    }
 
-        nav a.button {
-            display: inline-block;
-            background-color: white;
-            color: black;
-            padding: 10px 20px;
-            margin: 10px 5px;
-            text-decoration: none;
-            border: 2px solid white;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+    nav a.button {
+      display: inline-block;
+      background-color: yellow;
+      color: black;
+      padding: 10px 20px;
+      margin: 5px;
+      text-decoration: none;
+      border: 2px solid black;
+      border-radius: 5px;
+      font-weight: bold;
+    }
 
-        nav a.button:hover {
-            background-color: gray;
-            color: white;
-        }
+    nav a.button:hover {
+      background-color: orange;
+      color: white;
+    }
 
-        main {
-            padding: 30px;
-            background-color: white;
-        }
+    main {
+      padding: 30px;
+      background-color: white;
+      color: black;
+    }
 
-        #verifikasi {
-            display: none;
-            background-color: black;
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            max-width: 400px;
-        }
+    #verifikasi {
+      display: none;
+      background-color: black;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      max-width: 400px;
+    }
 
-        #kontenUtama {
-            display: none;
-        }
+    #kontenUtama {
+      display: none;
+    }
 
-        #welcomeSection {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
+    #welcomeSection {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
 
-        #gambarUtama img {
-            width: 300px;
-            border-radius: 10px;
-        }
+    #gambarUtama img {
+      width: 300px;
+      border-radius: 10px;
+    }
 
-        #welcomeText {
-            max-width: 400px;
-            text-align: center;
-        }
+    #welcomeText {
+      max-width: 400px;
+      text-align: center;
+    }
 
-        h2, h3 {
-            color: black;
-            text-align: center;
-        }
+    h2, h3 {
+      color: black;
+      text-align: center;
+    }
 
-        #searchWrapper {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    #searchWrapper {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-        #searchInput {
-            padding: 8px;
-            width: 250px;
-        }
+    #searchInput {
+      padding: 8px;
+      width: 250px;
+    }
 
-        #ebookSection {
-            display: flex;
-            justify-content: center;
-        }
+    #ebookSection {
+      display: flex;
+      justify-content: center;
+    }
 
-        #ebookList {
-            list-style: none;
-            padding-left: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
+    #ebookList {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
 
-        #ebookList li {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 150px;
-            text-align: center;
-        }
+    #ebookList li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 150px;
+      text-align: center;
+    }
 
-        #ebookList img {
-            margin-bottom: 10px;
-            border-radius: 8px;
-            width: 100px;
-            height: auto;
-        }
+    #ebookList img {
+      margin-bottom: 10px;
+      border-radius: 8px;
+      width: 100px;
+      height: 140px;
+      object-fit: cover;
+    }
 
-        #kerjasamaVideo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 50px;
-        }
+    #kerjasamaVideo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
 
-        video {
-            width: 300px;
-            height: auto;
-            margin-top: 20px;
-        }
+    video {
+      width: 300px;
+      height: auto;
+      margin-top: 20px;
+    }
 
-        footer {
-            text-align: center;
-            background-color: black;
-            color: white;
-            padding: 15px;
-            margin-top: 40px;
-        }
+    footer {
+      text-align: center;
+      background-color: black;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+    }
 
-        #error {
-            color: red;
-        }
+    #error {
+      color: red;
+    }
 
-        .leftAligned {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-    </style>
+    .leftAligned {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  </style>
 </head>
 <body onload="inisialisasiVerifikasi()">
-    <header>
-        <h1>PERPUSTAKAAN ESTER</h1>
-        <nav>
-            <a href="index.html" class="button">Home</a>
-            <a href="about.html" class="button">About Me</a>
-            <a href="contact-us.html" class="button">Hubungi Kami</a>
-            <a href="berita.html" class="button">Event Perpustakaan</a>
-            <a href="zonaperkalian.html" class="button">Zona Perkalian</a>
-            <a href="formulirkunjungan.html" class="button">Formulir Kunjungan</a>
-        </nav>
-    </header>
+  <header>
+    <h1>PERPUSTAKAAN ESTER</h1>
+  </header>
 
-    <main>
-        <!-- Kotak Verifikasi -->
-        <div id="verifikasi" class="leftAligned">
-            <p id="soal"></p>
-            <input type="number" id="jawaban" placeholder="Masukkan jawaban">
-            <button onclick="verifikasi()">Verifikasi</button>
-            <p id="error"></p>
+  <nav>
+    <a href="index.html" class="button">Home</a>
+    <a href="about.html" class="button">About Me</a>
+    <a href="contact-us.html" class="button">Hubungi Kami</a>
+    <a href="berita.html" class="button">Event Perpustakaan</a>
+    <a href="zonaperkalian.html" class="button">Zona Perkalian</a>
+    <a href="formulirkunjungan.html" class="button">Formulir Kunjungan</a>
+  </nav>
+
+  <main>
+    <!-- Kotak Verifikasi -->
+    <div id="verifikasi" class="leftAligned">
+      <p id="soal"></p>
+      <input type="number" id="jawaban" placeholder="Masukkan jawaban">
+      <button onclick="verifikasi()">Verifikasi</button>
+      <p id="error"></p>
+    </div>
+
+    <div id="pesan"></div>
+
+    <!-- Konten utama -->
+    <div id="kontenUtama">
+      <div id="welcomeSection">
+        <div id="gambarUtama">
+          <img src="gambarku.jpg" alt="Perpustakaan Ester">
         </div>
-
-        <div id="pesan"></div>
-
-        <!-- Konten utama -->
-        <div id="kontenUtama">
-            <div id="welcomeSection">
-                <div id="gambarUtama">
-                    <img src="gambarku.jpg" alt="Perpustakaan Ester">
-                </div>
-                <div id="welcomeText">
-                    <h2>Selamat Datang di Perpustakaan Ester!</h2>
-                    <p>
-                        Holla, welcome to my library! Temukan dunia dalam setiap halaman. Ini adalah Homepage Perpustakaan personal Ester. 
-                        Perpustakaan ini dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan.
-                    </p>
-                </div>
-            </div>
-
-            <h3>Koleksi E-Book</h3>
-            <div id="searchWrapper">
-                <input type="text" id="searchInput" onkeyup="searchEbook()" placeholder="Cari e-book...">
-            </div>
-            <div id="ebookSection">
-                <ul id="ebookList">
-                    <li>
-                        <img src="gambar pengantar bisnis.jpeg" alt="Pengantar Bisnis">
-                        <a href="Dok Buku Pengantar Bisnis.pdf" target="_blank">pengantar bisnis teori dan konsep</a>
-                    </li>
-                    <li>
-                        <img src="gambar dasar dasar layanan perpustakaan.jpeg" alt="Layanan Perpustakaan">
-                        <a href="569201-dasar-dasar-layanan-perpustakaan-68c36bca.pdf" target="_blank">dasar dasar layanan perpustakaan</a>
-                    </li>
-                    <li>
-                        <img src="gambar bedah.jpeg" alt="Gawat Darurat">
-                        <a href="Buku Gawat Darurat Medis dan Bedah.pdf" target="_blank">buku gawat darurat medis dan bedah</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div id="kerjasamaVideo">
-                <h3>Kerja Sama dan Referensi</h3>
-                <a href="https://perpustakaan.poltekparmedan.ac.id/kki/" target="_blank">Perpustakaan Politeknik Pariwisata Medan</a>
-
-                <h3>Video Perpustakaan</h3>
-                <video controls>
-                    <source src="WhatsApp Video 2025-03-19 at 20.29.29.mp4" type="video/mp4">
-                    Browser Anda tidak mendukung pemutaran video.
-                </video>
-            </div>
+        <div id="welcomeText">
+          <h2>Selamat Datang di Perpustakaan Ester!</h2>
+          <p>
+            Holla, welcome to my library! Temukan dunia dalam setiap halaman. Ini adalah Homepage Perpustakaan personal Ester. 
+            Perpustakaan ini dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan.
+          </p>
         </div>
-    </main>
+      </div>
 
-    <footer>
-        <p>© 2025 Ester Gea</p>
-    </footer>
+      <h3>Koleksi E-Book</h3>
+      <div id="searchWrapper">
+        <input type="text" id="searchInput" onkeyup="searchEbook()" placeholder="Cari e-book...">
+      </div>
+      <div id="ebookSection">
+        <ul id="ebookList">
+          <li>
+            <img src="gambar pengantar bisnis.jpeg" alt="Pengantar Bisnis">
+            <a href="Dok Buku Pengantar Bisnis.pdf" target="_blank">pengantar bisnis teori dan konsep</a>
+          </li>
+          <li>
+            <img src="gambar dasar dasar layanan perpustakaan.jpeg" alt="Layanan Perpustakaan">
+            <a href="569201-dasar-dasar-layanan-perpustakaan-68c36bca.pdf" target="_blank">dasar dasar layanan perpustakaan</a>
+          </li>
+          <li>
+            <img src="gambar bedah.jpeg" alt="Gawat Darurat">
+            <a href="Buku Gawat Darurat Medis dan Bedah.pdf" target="_blank">buku gawat darurat medis dan bedah</a>
+          </li>
+        </ul>
+      </div>
 
-    <script>
-        function searchEbook() {
-            let input = document.getElementById('searchInput').value.toLowerCase();
-            let ebooks = document.getElementById('ebookList').getElementsByTagName('li');
-            for (let i = 0; i < ebooks.length; i++) {
-                let ebookText = ebooks[i].innerText.toLowerCase();
-                ebooks[i].style.display = ebookText.includes(input) ? "" : "none";
-            }
-        }
-    </script>
+      <div id="kerjasamaVideo">
+        <h3>Kerja Sama dan Referensi</h3>
+        <a href="https://perpustakaan.poltekparmedan.ac.id/kki/" target="_blank">Perpustakaan Politeknik Pariwisata Medan</a>
 
-    <script src="dokumencookies.js"></script>
+        <h3>Video Perpustakaan</h3>
+        <video controls>
+          <source src="WhatsApp Video 2025-03-19 at 20.29.29.mp4" type="video/mp4">
+          Browser Anda tidak mendukung pemutaran video.
+        </video>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Ester Gea</p>
+  </footer>
+
+  <script>
+    function searchEbook() {
+      let input = document.getElementById('searchInput').value.toLowerCase();
+      let ebooks = document.getElementById('ebookList').getElementsByTagName('li');
+      for (let i = 0; i < ebooks.length; i++) {
+        let ebookText = ebooks[i].innerText.toLowerCase();
+        ebooks[i].style.display = ebookText.includes(input) ? "" : "none";
+      }
+    }
+  </script>
+
+  <script src="dokumencookies.js"></script>
 </body>
 </html>
