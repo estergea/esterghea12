@@ -159,7 +159,6 @@
   </nav>
 
   <main>
-    <!-- Kotak Verifikasi -->
     <div id="verifikasi" class="leftAligned">
       <input type="text" id="namaPengunjung" placeholder="Masukkan nama Anda" />
       <p id="soal"></p>
@@ -170,7 +169,6 @@
 
     <div id="pesan"></div>
 
-    <!-- Konten utama -->
     <div id="kontenUtama">
       <div id="welcomeSection">
         <div id="gambarUtama">
@@ -224,7 +222,31 @@
   </footer>
 
   <script>
-    // Fungsi untuk filter e-book
+    // Cookie helper
+    function setCookie(nama, nilai, hariKedaluwarsa) {
+      const d = new Date();
+      d.setTime(d.getTime() + (hariKedaluwarsa * 24 * 60 * 60 * 1000));
+      const expires = "expires=" + d.toUTCString();
+      document.cookie = nama + "=" + nilai + ";" + expires + ";path=/";
+    }
+
+    function getCookie(nama) {
+      let namaCookie = nama + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let cookieArray = decodedCookie.split(';');
+      for (let i = 0; i < cookieArray.length; i++) {
+        let c = cookieArray[i];
+        while (c.charAt(0) === ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(namaCookie) === 0) {
+          return c.substring(namaCookie.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    // Fungsi filter e-book
     function searchEbook() {
       let input = document.getElementById('searchInput').value.toLowerCase();
       let ebooks = document.getElementById('ebookList').getElementsByTagName('li');
@@ -234,27 +256,28 @@
       }
     }
 
-    // Variabel global untuk soal perkalian
     let angka1, angka2;
 
-    // Inisialisasi soal verifikasi
     function inisialisasiVerifikasi() {
-      // Tampilkan verifikasi dan sembunyikan konten utama
-      document.getElementById('verifikasi').style.display = 'flex';
-      document.getElementById('kontenUtama').style.display = 'none';
+      let namaCookie = getCookie("namaPengunjung");
+      if (namaCookie !== "") {
+        document.getElementById('verifikasi').style.display = 'none';
+        document.getElementById('kontenUtama').style.display = 'block';
+        document.getElementById('pesan').innerText = `Selamat datang kembali, ${namaCookie}!`;
+      } else {
+        document.getElementById('verifikasi').style.display = 'flex';
+        document.getElementById('kontenUtama').style.display = 'none';
 
-      // Buat soal perkalian sederhana
-      angka1 = Math.floor(Math.random() * 10) + 1;
-      angka2 = Math.floor(Math.random() * 10) + 1;
+        angka1 = Math.floor(Math.random() * 10) + 1;
+        angka2 = Math.floor(Math.random() * 10) + 1;
 
-      // Tampilkan soal
-      document.getElementById('soal').innerText = `Berapa hasil dari ${angka1} x ${angka2}?`;
-      document.getElementById('error').innerText = '';
-      document.getElementById('namaPengunjung').value = '';
-      document.getElementById('jawaban').value = '';
+        document.getElementById('soal').innerText = `Berapa hasil dari ${angka1} x ${angka2}?`;
+        document.getElementById('error').innerText = '';
+        document.getElementById('namaPengunjung').value = '';
+        document.getElementById('jawaban').value = '';
+      }
     }
 
-    // Fungsi verifikasi jawaban dan nama
     function verifikasi() {
       let nama = document.getElementById('namaPengunjung').value.trim();
       let jawaban = parseInt(document.getElementById('jawaban').value);
@@ -268,7 +291,7 @@
         return;
       }
       if (jawaban === angka1 * angka2) {
-        // Jika benar, sembunyikan verifikasi dan tampilkan konten utama
+        setCookie("namaPengunjung", nama, 1); // Simpan cookie 1 hari
         document.getElementById('verifikasi').style.display = 'none';
         document.getElementById('kontenUtama').style.display = 'block';
         document.getElementById('pesan').innerText = `Selamat datang, ${nama}! Anda berhasil diverifikasi.`;
