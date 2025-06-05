@@ -221,8 +221,13 @@
     <p>© 2025 Ester Gea</p>
   </footer>
 
+  <!-- Notifikasi Cookie -->
+  <div id="cookieNotice" style="display: none; position: fixed; bottom: 20px; left: 20px; background-color: black; color: white; padding: 15px; border-radius: 8px; max-width: 300px; z-index: 1000;">
+    <p style="margin: 0 0 10px 0;">Situs ini menggunakan cookie untuk menyimpan nama Anda. Dengan melanjutkan, Anda menyetujui penggunaannya.</p>
+    <button onclick="tutupNotifikasiCookie()" style="background-color: yellow; color: black; font-weight: bold; border: none; padding: 8px 12px; border-radius: 5px;">Saya Mengerti</button>
+  </div>
+
   <script>
-    // Cookie helper
     function setCookie(nama, nilai, hariKedaluwarsa) {
       const d = new Date();
       d.setTime(d.getTime() + (hariKedaluwarsa * 24 * 60 * 60 * 1000));
@@ -246,7 +251,17 @@
       return "";
     }
 
-    // Fungsi filter e-book
+    function tampilkanNotifikasiCookie() {
+      if (!getCookie("setujuCookie")) {
+        document.getElementById("cookieNotice").style.display = "block";
+      }
+    }
+
+    function tutupNotifikasiCookie() {
+      setCookie("setujuCookie", "ya", 30);
+      document.getElementById("cookieNotice").style.display = "none";
+    }
+
     function searchEbook() {
       let input = document.getElementById('searchInput').value.toLowerCase();
       let ebooks = document.getElementById('ebookList').getElementsByTagName('li');
@@ -264,6 +279,7 @@
         document.getElementById('verifikasi').style.display = 'none';
         document.getElementById('kontenUtama').style.display = 'block';
         document.getElementById('pesan').innerText = `Selamat datang kembali, ${namaCookie}!`;
+        tampilkanNotifikasiCookie();
       } else {
         document.getElementById('verifikasi').style.display = 'flex';
         document.getElementById('kontenUtama').style.display = 'none';
@@ -291,17 +307,17 @@
         return;
       }
       if (jawaban === angka1 * angka2) {
-        setCookie("namaPengunjung", nama, 1); // Simpan cookie 1 hari
+        setCookie("namaPengunjung", nama, 1);
         document.getElementById('verifikasi').style.display = 'none';
         document.getElementById('kontenUtama').style.display = 'block';
         document.getElementById('pesan').innerText = `Selamat datang, ${nama}! Anda berhasil diverifikasi.`;
         document.getElementById('error').innerText = '';
+        tampilkanNotifikasiCookie();
       } else {
         document.getElementById('error').innerText = 'Jawaban salah. Silakan coba lagi.';
       }
     }
   </script>
-
-  <script src="dokumencookies.js"></script>
 </body>
 </html>
+
