@@ -1,5 +1,3 @@
-// dokumencookies.js
-
 // Fungsi menyimpan cookie
 function setCookie(nama, nilai, hari) {
     const d = new Date();
@@ -31,7 +29,7 @@ let hasil = angka1 + angka2;
 function tampilkanSoal() {
     document.getElementById("verifikasi").style.display = "block";
     document.getElementById("soal").innerText = `Halo, siapa nama Anda? Dan berapakah ${angka1} + ${angka2}?`;
-    document.getElementById("kontenUtama").style.display = "none"; // sembunyikan konten utama
+    document.getElementById("kontenUtama").style.display = "none";
 }
 
 // Proses verifikasi jawaban dan nama
@@ -51,12 +49,14 @@ function verifikasi() {
         document.getElementById("verifikasi").style.display = "none";
         document.getElementById("kontenUtama").style.display = "block";
         document.getElementById("error").innerText = "";
+
+        tampilkanNotifikasiCookie(); // Tampilkan notifikasi cookie setelah verifikasi berhasil
     } else {
         document.getElementById("error").innerText = "Jawaban salah. Coba lagi.";
     }
 }
 
-// Inisialisasi verifikasi saat halaman load
+// Inisialisasi saat halaman dimuat
 function inisialisasiVerifikasi() {
     const status = getCookie("manusia");
     const nama = getCookie("pengunjung");
@@ -65,8 +65,30 @@ function inisialisasiVerifikasi() {
         document.getElementById("pesan").innerText = `Selamat datang kembali, ${nama}!`;
         document.getElementById("verifikasi").style.display = "none";
         document.getElementById("kontenUtama").style.display = "block";
+
+        tampilkanNotifikasiCookie(); // Tampilkan notifikasi cookie saat kunjungan ulang
     } else {
         tampilkanSoal();
     }
 }
+
+// Menampilkan notifikasi persetujuan cookie
+function tampilkanNotifikasiCookie() {
+    if (!getCookie("setujuCookie")) {
+        const cookieNotice = document.getElementById("cookieNotice");
+        if (cookieNotice) {
+            cookieNotice.style.display = "block";
+        }
+    }
+}
+
+// Menutup notifikasi cookie dan menyimpan persetujuan
+function tutupNotifikasiCookie() {
+    setCookie("setujuCookie", "ya", 30);
+    const cookieNotice = document.getElementById("cookieNotice");
+    if (cookieNotice) {
+        cookieNotice.style.display = "none";
+    }
+}
+
 
